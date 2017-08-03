@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MVC_LAB01.Models;
+using PagedList;
 
 namespace MVC_LAB01.Controllers
 {
@@ -15,18 +16,21 @@ namespace MVC_LAB01.Controllers
        // private 客戶資料Entities db = new 客戶資料Entities();
 
         // GET: 客戶銀行資訊
-        public ActionResult Index()
+        public ActionResult Index(string keyword="" , int pageNo=1)
         {
-            var 客戶銀行資訊 = 客戶銀行資訊Repo.All();
-            return View(客戶銀行資訊.ToList());
+            var 客戶銀行資訊 = 客戶銀行資訊Repo.All(keyword);
+            return View(客戶銀行資訊.ToList().ToPagedList(pageNo, 5));
         }
 
-        [HttpPost]
-        public ActionResult Index(string keyword)
+        public ActionResult Download(string keyword = "")
         {
 
-            return View(客戶銀行資訊Repo.All(keyword));
+            System.IO.MemoryStream stream = 客戶銀行資訊Repo.ExportExcelStreamFromDataTable(keyword);
+            FileContentResult fResult = new FileContentResult(stream.ToArray(), "application/x-xlsx");
+            fResult.FileDownloadName = "export.xlsx";
+            return fResult;
         }
+
 
         // GET: 客戶銀行資訊/Details/5
         public ActionResult Details(int? id)

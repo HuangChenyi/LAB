@@ -17,7 +17,13 @@
         <dd>
             @Html.DisplayFor(model => model.客戶名稱)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.客戶分類)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.客戶分類)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.統一編號)
         </dt>
@@ -60,6 +66,10 @@
 
     </dl>
 </div>
+
+<h4>客戶聯絡人資料</h4>
+@Html.Action("ContactList", "客戶資料", new { id = Model.Id })
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")

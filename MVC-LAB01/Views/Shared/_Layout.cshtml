@@ -23,13 +23,19 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("首頁", "Index", "Home")</li>
-@if (Request.IsAuthenticated)
-{
-                    <li>@Html.ActionLink("客戶資料", "Index", "客戶資料")</li>
-                    <li>@Html.ActionLink("客戶聯絡人", "Index", "客戶聯絡人")</li>
-                    <li>@Html.ActionLink("客戶銀行資訊", "Index", "客戶銀行資訊")</li>
-                    <li>@Html.ActionLink("客戶清單資訊", "Index", "客戶清單資訊")</li>
-}
+                    @if (User.IsInRole("admin"))
+                    {
+                        <li>@Html.ActionLink("客戶資料", "Index", "客戶資料")</li>
+                        <li>@Html.ActionLink("客戶聯絡人", "Index", "客戶聯絡人")</li>
+                        <li>@Html.ActionLink("客戶銀行資訊", "Index", "客戶銀行資訊")</li>
+                        <li>@Html.ActionLink("客戶清單資訊", "Index", "客戶清單資訊")</li>
+                    }
+                    @if (User.IsInRole("Cust"))
+                    {
+                        <li>
+                            @Html.ActionLink("修改客戶資料", "EditData", "客戶資料")
+                        </li>}
+
                     <li>@Html.ActionLink("關於", "About", "Home")</li>
                     <li>@Html.ActionLink("連絡方式", "Contact", "Home")</li>
                 </ul>

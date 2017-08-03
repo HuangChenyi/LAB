@@ -13,8 +13,16 @@ namespace MVC_LAB01.Models
 
 		public void Commit()
 		{
-			Context.SaveChanges();
-		}
+            try
+            {
+                Context.SaveChanges();
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEX)
+            {
+                throw;
+            }
+
+        }
 		
 		public bool LazyLoadingEnabled
 		{

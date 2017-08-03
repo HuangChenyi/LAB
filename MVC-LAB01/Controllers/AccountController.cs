@@ -64,8 +64,8 @@ namespace MVC_LAB01.Controllers
                          FormsAuthentication.FormsCookiePath);
 
 
-                    controlName = "EditProfile";
-                    actionName = "EditProfile";
+                    controlName = "Home";
+                    actionName = "Index";
 
                     routeValue = new { Account = data.Account };
                 }
@@ -95,7 +95,14 @@ namespace MVC_LAB01.Controllers
                 return true;
             }
 
-     
+            var 客戶資料 = 客戶資料Repo.FindBy帳號(data.Account);
+
+            if (客戶資料 != null && 客戶資料.密碼 == FormsAuthentication.HashPasswordForStoringInConfigFile(data.Account + data.Password, "SHA1"))
+            {
+                return true;
+            }
+
+
 
             return false;
 

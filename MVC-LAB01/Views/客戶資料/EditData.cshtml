@@ -1,0 +1,105 @@
+﻿@model MVC_LAB01.Models.客戶資料
+
+@{
+    ViewBag.Title = "修改客戶資料";
+}
+
+<h2>EditData</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<div>
+    <h4>客戶資料</h4>
+    <hr />
+
+
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.HiddenFor(model => model.Id)
+            @Html.DisplayNameFor(model => model.客戶名稱)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.客戶名稱)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.統一編號)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.統一編號)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.電話)
+        </dt>
+
+        <dd>
+            @Html.EditorFor(model => model.電話)
+            @Html.ValidationMessageFor(model => model.電話, "", new { @class = "text-danger" })
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.傳真)
+        </dt>
+
+        <dd>
+            @Html.EditorFor(model => model.傳真)
+            @Html.ValidationMessageFor(model => model.傳真, "", new { @class = "text-danger" })
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.地址)
+        </dt>
+
+        <dd>
+            @Html.EditorFor(model => model.地址)
+            @Html.ValidationMessageFor(model => model.地址, "", new { @class = "text-danger" })
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.客戶分類)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.客戶分類)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.帳號)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.帳號)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.密碼)
+        </dt>
+
+        <dd>
+            @Html.PasswordFor(model => model.密碼)
+        </dd>
+
+    </dl>
+</div>
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Save" class="btn btn-default" />
+    </div>
+</div>
+
+}

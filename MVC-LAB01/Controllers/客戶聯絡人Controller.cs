@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MVC_LAB01.Models;
+using PagedList;
 
 namespace MVC_LAB01.Controllers
 {
@@ -18,18 +19,45 @@ namespace MVC_LAB01.Controllers
 
 
         // GET: 客戶聯絡人
-        public ActionResult Index()
+        public ActionResult Index(string keyword ="", string 職稱條件="" , string sortOrder="ASC", string sortColumn="職稱" ,int pageNo = 1 )
         {
-            var 客戶聯絡人 = 客戶聯絡人Repo.All() ;
-            return View(客戶聯絡人.ToList());
+
+
+            ViewBag.職稱列表 = 客戶聯絡人Repo.取得職稱列表();
+
+            var 客戶聯絡人 = 客戶聯絡人Repo.All(keyword, 職稱條件  , sortColumn, sortOrder) ;
+
+            if (sortOrder == "DESC")
+            {
+                sortOrder = "ASC";
+            }
+            else
+            {
+                sortOrder = "DESC";
+            }
+
+           
+
+            ViewBag.sort = sortOrder;
+            ViewBag.pageNo = pageNo;
+            return View(客戶聯絡人.ToList().ToPagedList(pageNo,5));
         }
 
-       [HttpPost]
-        public ActionResult Index(string keyword)
+        public ActionResult Download(string keyword = "", string 職稱條件 = "", string sortOrder = "ASC", string sortColumn = "職稱")
         {
-          
-            return View(客戶聯絡人Repo.All(keyword));
+
+            System.IO.MemoryStream stream = 客戶聯絡人Repo.ExportExcelStreamFromDataTable(keyword, 職稱條件, sortColumn, sortOrder);
+            FileContentResult fResult = new FileContentResult(stream.ToArray(), "application/x-xlsx");
+            fResult.FileDownloadName = "export.xlsx";
+            return fResult;
         }
+
+        //[HttpPost]
+        // public ActionResult Index(string keyword)
+        // {
+
+        //     return View(客戶聯絡人Repo.All(keyword));
+        // }
 
         // GET: 客戶聯絡人/Details/5
         public ActionResult Details(int? id)
@@ -145,5 +173,7 @@ namespace MVC_LAB01.Controllers
             }
             base.Dispose(disposing);
         }
+
+
     }
 }

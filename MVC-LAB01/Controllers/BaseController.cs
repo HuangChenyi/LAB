@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace MVC_LAB01.Controllers
 {
-    [Authorize(Users  = "admin")]
+    [Authorize(Roles = "Cust,admin" )]
     public class BaseController : Controller
     {
         // GET: Base

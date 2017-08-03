@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<MVC_LAB01.Models.客戶銀行資訊>
+@using PagedList;
+@using PagedList.Mvc;
 
 @{
     ViewBag.Title = "Index";
@@ -7,16 +9,48 @@
 <h2>Index</h2>
 
 
-@using (Html.BeginForm())
+@section scripts
+{
+    <script>
+        $(function () {
+
+            $(".pagination a").on("click", function () {
+
+                var href = $(this).attr("href");
+                var pid = href.substring(href.indexOf('?pageNo=') + 8);
+                document.form1.pageNo.value = pid;
+                document.form1.submit();
+                return false;
+            });
+        });
+        function Sort(columnName, sortOrder) {
+            $("#sortColumn").val(columnName);
+            $("#sortOrder").val(sortOrder);
+            document.form1.submit();
+            return false;
+        }
+
+
+    </script>
+}
+
+@using (Html.BeginForm("Index", "客戶銀行資訊", FormMethod.Get, new { name = "form1" }))
 {
     @Html.AntiForgeryToken()
+    @Html.Hidden("pageNo")
+    @Html.Hidden("sortOrder")
+    @Html.Hidden("sortColumn")
+
 
     <p>
         銀行名稱
         @Html.TextBox("keyword")
         <input type="submit" value="Query" class="btn btn-default" />
-        @Html.ActionLink("Create New", "Create")
+
     </p>
+
+    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Download Excel", "Download")
     <table class="table">
         <tr>
             <th>
@@ -70,4 +104,6 @@
         }
 
     </table>
+
+    @Html.PagedListPager(Model as IPagedList, p => Url.Action("Index", new { pageNo = p }))
 }
