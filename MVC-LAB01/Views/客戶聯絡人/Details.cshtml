@@ -60,6 +60,14 @@
 
     </dl>
 </div>
+
+@section nav {
+    <li><a href="@Url.Action("Index", "客戶聯絡人")">客戶聯絡人</a></li>
+}
+@section nav1 {
+    客戶聯絡人明細
+}
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")

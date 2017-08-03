@@ -110,4 +110,11 @@
 
     @Html.PagedListPager(Model as IPagedList, p => Url.Action("Index", new { pageNo = p }))
 
+
+   @section nav {
+            <li><a href="@Url.Action("Index", "客戶聯絡人")">客戶聯絡人</a></li>
+        }
+    @section nav1 {
+        客戶聯絡人
+    }
 }

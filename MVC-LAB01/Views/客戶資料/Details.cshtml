@@ -74,3 +74,11 @@
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+
+@section nav {
+    <li><a href="@Url.Action("Index", "客戶資料")">客戶資料</a></li>
+}
+@section nav1 {
+    客戶資料明細
+}

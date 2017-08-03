@@ -337,10 +337,85 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="dist\css\AdminLTE.css" />
+    <Content Include="dist\css\AdminLTE.min.css" />
+    <Content Include="dist\css\alt\AdminLTE-bootstrap-social.css" />
+    <Content Include="dist\css\alt\AdminLTE-bootstrap-social.min.css" />
+    <Content Include="dist\css\alt\AdminLTE-fullcalendar.css" />
+    <Content Include="dist\css\alt\AdminLTE-fullcalendar.min.css" />
+    <Content Include="dist\css\alt\AdminLTE-select2.css" />
+    <Content Include="dist\css\alt\AdminLTE-select2.min.css" />
+    <Content Include="dist\css\alt\AdminLTE-without-plugins.css" />
+    <Content Include="dist\css\alt\AdminLTE-without-plugins.min.css" />
+    <Content Include="dist\css\skins\skin-black-light.css" />
+    <Content Include="dist\css\skins\skin-black-light.min.css" />
+    <Content Include="dist\css\skins\skin-black.css" />
+    <Content Include="dist\css\skins\skin-black.min.css" />
+    <Content Include="dist\css\skins\skin-blue-light.css" />
+    <Content Include="dist\css\skins\skin-blue-light.min.css" />
+    <Content Include="dist\css\skins\skin-blue.css" />
+    <Content Include="dist\css\skins\skin-blue.min.css" />
+    <Content Include="dist\css\skins\skin-green-light.css" />
+    <Content Include="dist\css\skins\skin-green-light.min.css" />
+    <Content Include="dist\css\skins\skin-green.css" />
+    <Content Include="dist\css\skins\skin-green.min.css" />
+    <Content Include="dist\css\skins\skin-purple-light.css" />
+    <Content Include="dist\css\skins\skin-purple-light.min.css" />
+    <Content Include="dist\css\skins\skin-purple.css" />
+    <Content Include="dist\css\skins\skin-purple.min.css" />
+    <Content Include="dist\css\skins\skin-red-light.css" />
+    <Content Include="dist\css\skins\skin-red-light.min.css" />
+    <Content Include="dist\css\skins\skin-red.css" />
+    <Content Include="dist\css\skins\skin-red.min.css" />
+    <Content Include="dist\css\skins\skin-yellow-light.css" />
+    <Content Include="dist\css\skins\skin-yellow-light.min.css" />
+    <Content Include="dist\css\skins\skin-yellow.css" />
+    <Content Include="dist\css\skins\skin-yellow.min.css" />
+    <Content Include="dist\css\skins\_all-skins.css" />
+    <Content Include="dist\css\skins\_all-skins.min.css" />
+    <Content Include="dist\img\avatar.png" />
+    <Content Include="dist\img\avatar04.png" />
+    <Content Include="dist\img\avatar2.png" />
+    <Content Include="dist\img\avatar3.png" />
+    <Content Include="dist\img\avatar5.png" />
+    <Content Include="dist\img\boxed-bg.jpg" />
+    <Content Include="dist\img\boxed-bg.png" />
+    <Content Include="dist\img\credit\american-express.png" />
+    <Content Include="dist\img\credit\cirrus.png" />
+    <Content Include="dist\img\credit\mastercard.png" />
+    <Content Include="dist\img\credit\mestro.png" />
+    <Content Include="dist\img\credit\paypal.png" />
+    <Content Include="dist\img\credit\paypal2.png" />
+    <Content Include="dist\img\credit\visa.png" />
+    <Content Include="dist\img\default-50x50.gif" />
+    <Content Include="dist\img\icons.png" />
+    <Content Include="dist\img\photo1.png" />
+    <Content Include="dist\img\photo2.png" />
+    <Content Include="dist\img\photo3.jpg" />
+    <Content Include="dist\img\photo4.jpg" />
+    <Content Include="dist\img\user1-128x128.jpg" />
+    <Content Include="dist\img\user2-160x160.jpg" />
+    <Content Include="dist\img\user3-128x128.jpg" />
+    <Content Include="dist\img\user4-128x128.jpg" />
+    <Content Include="dist\img\user5-128x128.jpg" />
+    <Content Include="dist\img\user6-128x128.jpg" />
+    <Content Include="dist\img\user7-128x128.jpg" />
+    <Content Include="dist\img\user8-128x128.jpg" />
+    <Content Include="dist\js\adminlte.js" />
+    <Content Include="dist\js\adminlte.min.js" />
+    <Content Include="dist\js\app.js" />
+    <Content Include="dist\js\app.min.js" />
+    <Content Include="dist\js\demo.js" />
+    <Content Include="dist\js\pages\dashboard.js" />
+    <Content Include="dist\js\pages\dashboard2.js" />
     <Content Include="favicon.ico" />
+    <Content Include="Gruntfile.js" />
+    <Content Include="index.html" />
+    <Content Include="index2.html" />
     <Content Include="Models\EFGeneratePartialClass.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EFGeneratePartialClass.cs</LastGenOutput>
@@ -374,6 +449,16 @@
     <Content Include="Models\客戶資料Model.edmx.diagram">
       <DependentUpon>客戶資料Model.edmx</DependentUpon>
     </Content>
+    <Content Include=".npmignore" />
+    <Content Include="bower.json" />
+    <Content Include="changelog.md" />
+    <Content Include="composer.json" />
+    <Content Include="LICENSE" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="dist\css\adminlte.css.map" />
+    <Content Include="dist\css\adminlte.min.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -386,6 +471,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="starter.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -442,6 +528,8 @@
     <Content Include="Views\客戶清單資訊\Index.cshtml" />
     <Content Include="Views\客戶資料\ContactList.cshtml" />
     <Content Include="Views\客戶資料\EditData.cshtml" />
+    <Content Include="yarn.lock" />
+    <Content Include="Views\Shared\_Layout.new.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -456,7 +544,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="bower_components\" />
+    <Folder Include="build\" />
+    <Folder Include="documentation\" />
     <Folder Include="Models\InputValidations\" />
+    <Folder Include="pages\" />
+    <Folder Include="plugins\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <PropertyGroup>
